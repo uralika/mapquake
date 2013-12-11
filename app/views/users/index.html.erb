@@ -1,9 +1,10 @@
-<% @users.each do |u| %>
+
+
 <tr>
-      <td><%= u.email %></td><br>
-      <td><%= u.street %></td>, 	
-      <td><%= u.state %></td>
-      <td><%= u.zip %></td><br><br>
-      <% end %>
-    
- </tr>
+      <td><%= current_user[:email] %></td><br>
+      <td><%= current_user[:street] %></td>, 	
+      <td><%= current_user[:state] %></td>
+      <td><%= current_user[:zip] %></td><br><br>   
+</tr>
+
+
