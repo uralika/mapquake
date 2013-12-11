@@ -35,6 +35,7 @@ end
 
 gem 'geocoder'
 gem 'gmaps4rails'
+gem "httparty", "~> 0.12.0"
 
 group :development, :test do
 	gem 'rspec-rails'
