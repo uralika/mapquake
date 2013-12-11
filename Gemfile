@@ -33,6 +33,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'geocoder'
+gem 'gmaps4rails'
 
 group :development, :test do
 	gem 'rspec-rails'

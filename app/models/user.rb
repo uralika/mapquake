@@ -9,6 +9,11 @@ class User < ActiveRecord::Base
 	validates :state, presence:true
 	validates :zip, presence:true
 
+	geocoded_by :street 
+	geocoded_by :state 
+	geocoded_by :zip
+	after_validation :geocode
+
 	has_many :alerts
 
 	def userdef
