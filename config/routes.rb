@@ -4,6 +4,12 @@ Mapquake::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
    root 'welcome#index'
+   get 'authentications' => 'authentications#new'
+   get '/users/index' => 'users#index'
+   delete '/users/new' => 'authentications#destroy'
+   resources :authentications, only: [:new, :create]
+   resources :users, only: [:new, :create, :index]
+  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -1,0 +1,14 @@
+<%= form_for @user do |u| %>
+
+<div class='container'>
+  <%=u.text_field :email, placeholder: 'Email' %><br />
+  <%=u.text_field :username, placeholder: 'Username' %><br />
+  <%=u.text_field :street, placeholder: 'Street' %><br />
+  <%=u.text_field :state, placeholder: 'State' %><br />
+  <%=u.text_field :zip, placeholder: 'Zip' %></br>
+  <%=u.password_field :password, placeholder: 'Password' %><br />
+  <%=u.password_field :password_confirmation, placeholder: 'Confirm Password'%><br />
+  <div class='center'><%= u.submit %><div> 
+</div>
+
+<% end %>

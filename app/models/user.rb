@@ -1,5 +1,44 @@
 class User < ActiveRecord::Base
 	require 'bcrypt'
 
+	validates :email, presence:true, 
+					  uniqueness: { case_sensitive: false }
+	validates :username, presence:true
+	validates :password, confirmation: true
+	validates :street, presence:true
+	validates :state, presence:true
+	validates :zip, presence:true
+
 	has_many :alerts
+
+	def userdef
+		@email = email
+		@username = username
+		@salt = salt
+		@hashed_password = hashed_password
+		@street = street
+		@state = state
+		@zip = zip
+	end
+
+	attr_accessor :password, :password_confirmation
+
+	before_save :hash_password
+
+	def authenticate(password)
+		self.hashed_password ==
+		BCrypt::Engine.hash_secret(password, self.salt)
+	end
+
+	private
+
+	def hash_password
+		if password.present?
+			self.salt = BCrypt::Engine.generate_salt
+			self.hashed_password =
+			BCrypt::Engine.hash_secret(password, self.salt)
+			password = password_confirmation = nil
+		end
+	end	
+
 end
