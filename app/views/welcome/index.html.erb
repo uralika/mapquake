@@ -1,6 +1,6 @@
 
 <!-- Content begin -->
-  <svg id="map"></svg>
+  <svg id="map" data-no-turbolink></svg>
   <!-- Content end -->
 
   <!-- Dependencies begin-->
@@ -12,7 +12,7 @@
   <!-- Dependencies end-->
   
   <% content_for :scripts do :javascript%>
-  <script type="text/javascript">
+  <script type="text/javascript" data-no-turbolink>
   var width = 960,
     height = width / 2;
 

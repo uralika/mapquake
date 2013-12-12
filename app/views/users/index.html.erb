@@ -8,12 +8,12 @@ Your contacts:<br><br>
       <td><%= current_user[:zip] %></td><br><br>   
 </tr>
 Our users:
-<div style='width: 400px; border: 1px solid black;'>
-  <div id="map" style='width: 400px; height: 400px;'></div>
+<div style='width: 400px; border: 1px solid black;' data-no-turbolink>
+  <div id="map" style='width: 400px; height: 400px;' data-no-turbolink></div>
 </div>
 
- <% content_for :scripts do :javascript%>
-<script type="text/javascript">
+ <% content_for :scripts do :javascript %>
+<script type="text/javascript" data-no-turbolink>
 handler = Gmaps.build('Google');
 handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
  markers = handler.addMarkers(<%=raw @hash.to_json %>);
