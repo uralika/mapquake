@@ -9,6 +9,7 @@ Mapquake::Application.routes.draw do
    delete '/users/new' => 'authentications#destroy'
    resources :authentications, only: [:new, :create]
    resources :users, only: [:new, :create, :index]
+   resources :alerts
   
 
   # Example of regular route:

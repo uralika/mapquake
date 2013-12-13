@@ -1,0 +1,15 @@
+<%= form_for @alert do |alert| %>
+
+<p>
+    <%= alert.label :name, "Alert me of e-quakes for:"%>
+    <%= alert.text_field :name, placeholder: "Name" %>
+    <%= alert.text_field :street, placeholder: "Street" %>
+    <%= alert.text_field :state, placeholder: "State" %>
+    <%= alert.text_field :zip, placeholder: "Zip" %>        
+</p>
+
+<p>
+<%= alert.submit "Add to MeAlerts" %>
+</p>
+
+<%end%>
