@@ -10,10 +10,9 @@
  *
  *= require_self
  *= require foundation_and_overrides
-
  *= require_tree .
- */
-*= require foundation_and_overrides
+ *= require foundation_and_overrides
+*/
 
 body {
   font: 10px sans-serif;
