@@ -20,7 +20,7 @@ MeAlert:<br><br>
 	<% event_list =[]%>
 	<% query.each do |x| %>
 	<% string1 = x['properties']['title'] %>
-	<% string2 = x['properties']['time'] %>
+	<% string2 = Time.at(x['properties']['time'] / 1000) %>
 	<% string3 = string1.to_s + " at " + string2.to_s %> 
 	<div id='24hrs'>
 		<%= event_list.to_s << string3 if string3.include? alert[:state] %>
