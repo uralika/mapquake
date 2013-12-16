@@ -11,7 +11,7 @@ Earthquakes in <%= current_user[:state] %> over the last 24 hrs:<br><br>
 <tr>
 	<% querie = HTTParty.get "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_day.geojson" %>
 	<% query = querie['features'] %>
-	<% event_list = [] %>
+	<% event_list =[]%>
 	<% query.each do |x| %>
 	<% string = x['properties']['title'] %>
 	<%= event_list << string if string.include? current_user[:state] %>
