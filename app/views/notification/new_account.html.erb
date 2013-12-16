@@ -1,6 +1,22 @@
-Hello,
+Hello <%= current_user[:username]! %><br>
 
-Your new account is active.
+Your new account is active.<br>
+
+Nearby quakes within 24 hrs:
+
+<% querie = HTTParty.get "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_day.geojson" %>
+	<% query = querie['features'] %>
+	<% event_list =[]%>
+	<% query.each do |x| %>
+	<% string1 = x['properties']['title'] %>
+	<% string2 = Time.at(x['properties']['time'] / 1000) %>
+	<% string3 = string1.to_s + " at " + string2.to_s %>
+	<div id='24hrs'>
+		<%= event_list.to_s << string3 if string3.include? current_user[:state] %>
+	
+		<% end %>
+	</div>
+
 
 Have a great day!
 
