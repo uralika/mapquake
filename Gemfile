@@ -43,6 +43,7 @@ group :development, :test do
 	gem 'capybara'
 	gem 'selenium-webdriver'
 	gem 'database_cleaner'
+	gem 'letter_opener'
 end
 
 group :production do
