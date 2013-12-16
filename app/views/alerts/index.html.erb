@@ -9,11 +9,27 @@ MeAlert:<br><br>
 
 	<td><%= alert.state %>,</td>
 
-	<td><%= alert.zip %></td>
+	<td><%= alert.zip %></td>&nbsp;
 
-	<td><%= button_to "X", { action: "destroy", id: alert.id}, {method: :delete, :class => "mybutton" } %></td>
+	<td><%= link_to "X", alert, method: :delete %></td><br><br>
 </tr>
+<tr>
+	<td>
+			<% querie = HTTParty.get "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_day.geojson" %>
+	<% query = querie['features'] %>
+	<% event_list =[]%>
+	<% query.each do |x| %>
+	<% string1 = x['properties']['title'] %>
+	<% string2 = x['properties']['time'] %>
+	<% string3 = string1.to_s + " at " + string2.to_s %> 
+	<div id='24hrs'>
+		<%= event_list.to_s << string3 if string3.include? alert[:state] %>
+	
+		<% end %>
 
-<br><br>
 
+	</td><br>				
+</tr>
 <% end %>
+<br><br>
+<%= link_to 'New Alert', new_alert_path %>

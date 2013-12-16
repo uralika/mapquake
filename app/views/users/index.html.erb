@@ -7,16 +7,18 @@
       <td><%= current_user[:state] %></td>
       <td><%= current_user[:zip] %></td><br><br>   
 </tr>
-Earthquakes in <%= current_user[:state] %> over the past 24 hrs:<br><br>
+Earthquakes in <%= current_user[:state] %> < 24 hrs:<br><br>
 
 	<% querie = HTTParty.get "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_day.geojson" %>
 	<% query = querie['features'] %>
 	<% event_list =[]%>
 	<% query.each do |x| %>
-	<% string = x['properties']['title'] %>
+	<% string1 = x['properties']['title'] %>
+	<% string2 = x['properties']['time'] %>
+	<% string3 = string1.to_s + " at " + string2.to_s %>
 <tr><td>
 	<div id='24hrs'>
-		<%= event_list.to_s << string if string.include? current_user[:state] %>
+		<%= event_list.to_s << string3 if string3.include? current_user[:state] %>
 	
 		<% end %>
 	</div></td>
