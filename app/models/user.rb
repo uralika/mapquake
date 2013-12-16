@@ -26,9 +26,10 @@ class User < ActiveRecord::Base
 		@zip = zip
 	end
 
-	attr_accessor :password, :password_confirmation
+	attr_accessor :password, :password_confirmation, :email, :username
 
 	before_save :hash_password
+	after_save :send_welcome_email
 
 	def authenticate(password)
 		self.hashed_password ==
@@ -36,6 +37,8 @@ class User < ActiveRecord::Base
 	end
 
 	private
+
+	
 
 	def hash_password
 		if password.present?
@@ -45,5 +48,10 @@ class User < ActiveRecord::Base
 			password = password_confirmation = nil
 		end
 	end	
+
+	def send_welcome_email
+		Notification.new_account(self).deliver
+	end
+
 
 end
