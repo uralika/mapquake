@@ -13,6 +13,29 @@
 </head>
 
 <body>
+  <div>
+  <nav class="top-bar" data-topbar data-options="is_hover: false">
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="/">Mapquake</a></h1>
+    </li>
+    <li class="toggle-topbar menu-icon"><a href="/"><span>Menu</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <li class="active"><a href="/users/new">Signup</a></li>
+      <li class="has-dropdown">
+        <a href="/authentications">Login</a>
+        <ul class="dropdown">
+          <li><a href="/users/index">Your Profile</a></li>
+          <li><a href="/alerts">Me Alerts</a></li>
+          <li><a href="/alerts/new">Add Me Alerts</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
   <% if current_user %>
   <div class="login">
     <h1 class="logged"><%= current_user[:username] %></h1>

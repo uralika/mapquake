@@ -58,4 +58,7 @@ body {
   stroke-width: 1.5px;
 }
 
+.mybutton {
+  display: inline-block;
+}
 

@@ -4,23 +4,16 @@ MeAlert:<br><br>
 
 <tr>
 	<td><b><u><%= alert.name %></u></b>:</td>
-</tr>
-<tr>
+
 	<td><%= alert.street %></td>
-</tr>
-<tr>
+
 	<td><%= alert.state %>,</td>
-</tr>
-<tr>
+
 	<td><%= alert.zip %></td>
+
+	<td><%= button_to "X", { action: "destroy", id: alert.id}, {method: :delete, :class => "mybutton" } %></td>
 </tr>
-<tr>
-	 <td><%= button_to "X", { action: "destroy", id: alert.id}, {method: :delete, :class => "mybutton"} %></td>
-</tr>
-<tr>
-	<td>
-        <%= link_to 'edit', edit_alert_path(alert) %></td>
-</tr>
+
 <br><br>
 
 <% end %>
