@@ -68,8 +68,8 @@ Mapquake::Application.configure do
   :address              => "smtp.gmail.com",
   :port                 => 587,
   :domain               => 'mapquake.herokuapp.com',
-  :user_name            => 'GMAIL_USERNAME',
-  :password             => 'GMAIL_PASSWORD',
+  :user_name            => ENV['EMAIL'],
+  :password             => ENV['PASSWORD'],
   :authentication       => 'plain',
   :enable_starttls_auto => true  }
 

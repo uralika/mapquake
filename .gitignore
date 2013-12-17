@@ -15,4 +15,4 @@
 /log/*.log
 /tmp
 
-~/.bashrc
+/config/initializers/app_env_vars.rb
