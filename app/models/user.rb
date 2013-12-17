@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
 		@zip = zip
 	end
 
-	attr_accessor :password, :password_confirmation, :email, :username
+	attr_accessor :password, :password_confirmation
 
 	before_save :hash_password
 	after_save :send_welcome_email
