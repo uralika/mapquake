@@ -20,6 +20,7 @@ class UsersController < ApplicationController
 		if @user.save
 			session[:user_id] = @user.id
 			redirect_to root_url
+			Notification.new_account(current_user).deliver
 		else
 			redirect_to action:"new"
 		end

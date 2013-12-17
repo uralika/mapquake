@@ -29,7 +29,6 @@ class User < ActiveRecord::Base
 	attr_accessor :password, :password_confirmation
 
 	before_save :hash_password
-	after_save :send_welcome_email
 
 	def authenticate(password)
 		self.hashed_password ==
@@ -48,10 +47,5 @@ class User < ActiveRecord::Base
 			password = password_confirmation = nil
 		end
 	end	
-
-	def send_welcome_email
-		Notification.new_account(self).deliver
-	end
-
 
 end
