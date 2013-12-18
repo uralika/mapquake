@@ -46,6 +46,10 @@ group :development, :test do
 	gem 'letter_opener'
 end
 
+gem 'sidekiq'
+gem 'sinatra', require: false
+gem 'slim'
+
 group :production do
   gem 'rails_12factor'
   gem 'thin'

@@ -30,4 +30,6 @@ class UsersController < ApplicationController
 		User.find(params[:id]).destroy
 		redirect_to root_url
 	end
+
+	UsersWorker.perform_async(@user.id)
 end
