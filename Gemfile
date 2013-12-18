@@ -49,6 +49,8 @@ end
 gem 'sidekiq'
 gem 'sinatra', require: false
 gem 'slim'
+gem 'ice_cube'
+gem 'sidetiq'
 
 group :production do
   gem 'rails_12factor'

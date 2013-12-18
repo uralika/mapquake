@@ -1,0 +1,23 @@
+Hello there!<br>
+
+Below are your daily quakes.<br>
+
+Some feature quakes within last 24 hrs:
+
+<% querie = HTTParty.get "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_day.geojson" %>
+	<% query = querie['features'] %>
+	<% event_list =[]%>
+	<% query.each do |x| %>
+	<% string1 = x['properties']['title'] %>
+	<% string2 = Time.at(x['properties']['time'] / 1000) %>
+	<% string3 = string1.to_s + " at " + string2.to_s %>
+	<div id='24hrs'>
+		<%= event_list.to_s << string3 %><br>
+	
+		<% end %>
+	</div>
+
+
+Have a great day!
+
+Your friendly Mapquake bot

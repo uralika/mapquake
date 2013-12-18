@@ -21,15 +21,17 @@ class UsersController < ApplicationController
 			session[:user_id] = @user.id
 			redirect_to root_url
 			Notification.new_account(current_user).deliver
+			UsersWorker.perform_async(@user.id)
+	
 		else
 			redirect_to action:"new"
 		end
 	end
+
 
 	def destroy
 		User.find(params[:id]).destroy
 		redirect_to root_url
 	end
 
-	UsersWorker.perform_async(@user.id)
 end

@@ -1,10 +1,9 @@
 class UsersWorker
-	include Sidekiq::UsersWorker
-	sidekiq_options queue: "high"
-	sidekiq_options retry: true
+	include Sidekiq::Worker
+	include Sidetiq::Schedulable
 
+	recurrence { minutely }
 	def perform(user_id)
-		user = User.find(user_id)
-		
-	end
+		Notification.daily_quakes(user_id)
+end
 end
