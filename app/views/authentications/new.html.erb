@@ -1,10 +1,10 @@
-
-      <div class='container_login login'>
+<br><br>
+      <div class='container'>
         <%= form_for @user, {url: '/authentications', method: 'post'} do |u|%>
       <p>
         <%=u.text_field :email, placeholder: 'Email' %><br />
         <%=u.password_field :password, placeholder: 'Password' %><br />
-        <%= u.submit "Log In" %>
+        <%= u.submit "Log In", :id => 'button' %>
       </p>
       <% end %>
    </div>

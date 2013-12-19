@@ -8,7 +8,8 @@ class Notification < ActionMailer::Base
   		 :subject => "#{user.username}, your Mapquake account is now active!")
   end
 
-  def daily_quakes(user)
+  def daily_quakes(user_id)
+  	user = User.find(user_id)
   	mail(:to => user.email,
   		:subject => "Daily Selection of Major Quakes for #{user.username}!")
   end

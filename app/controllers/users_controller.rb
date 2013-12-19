@@ -33,6 +33,6 @@ class UsersController < ApplicationController
 		redirect_to root_url
 	end
 
-	NotificationWorker.perform_async(@user)
+	#Notification.delay.daily_quakes(@user.id)
 
 end
