@@ -1,15 +1,14 @@
+
 <%= form_for @alert do |alert| %>
+<br><br>
+<div class='container'>
+    <h2><%= alert.label :name, "Alert me of earthquakes for:"%></h2><br>
+    <%= alert.text_field :name, placeholder: "Name" %><br>
+    <%= alert.text_field :street, placeholder: "Street" %><br>
+    <%= alert.text_field :state, placeholder: "State" %><br>
+    <%= alert.text_field :zip, placeholder: "Zip" %><br>  
 
-<p>
-    <%= alert.label :name, "Alert me of e-quakes for:"%>
-    <%= alert.text_field :name, placeholder: "Name" %>
-    <%= alert.text_field :street, placeholder: "Street" %>
-    <%= alert.text_field :state, placeholder: "State" %>
-    <%= alert.text_field :zip, placeholder: "Zip" %>        
-</p>
-
-<p>
-<%= alert.submit "Add to MeAlerts" %>
-</p>
-
+<div class='center'><%= alert.submit "Add to MeAlerts", :id=>'button' %></div>
+</div>
 <%end%>
+

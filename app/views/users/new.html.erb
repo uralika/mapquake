@@ -1,5 +1,5 @@
 <%= form_for @user do |u| %>
-
+<br><br>
 <div class='container'>
   <%=u.text_field :email, placeholder: 'Email' %><br />
   <%=u.text_field :username, placeholder: 'Username' %><br />
@@ -8,7 +8,7 @@
   <%=u.text_field :zip, placeholder: 'Zip' %></br>
   <%=u.password_field :password, placeholder: 'Password' %><br />
   <%=u.password_field :password_confirmation, placeholder: 'Confirm Password'%><br />
-  <div class='center'><%= u.submit %><div> 
+  <div class='center'><%= u.submit 'Create account', :id => 'button' %><div> 
 </div>
 
 <% end %>

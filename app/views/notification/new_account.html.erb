@@ -1,9 +1,9 @@
-Hello there!<br>
+Hello there!<br><br>
 
-Your new account is active.<br>
+Your account is now active.<br><br>
 
 Some feature quakes within last 24 hrs:
-
+<br><br>
 <% querie = HTTParty.get "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_day.geojson" %>
 	<% query = querie['features'] %>
 	<% event_list =[]%>
@@ -17,7 +17,8 @@ Some feature quakes within last 24 hrs:
 		<% end %>
 	</div>
 
-
+<br><br>
 Have a great day!
+<br><br>
 
 Your friendly Mapquake bot

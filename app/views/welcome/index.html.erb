@@ -1,3 +1,7 @@
+ <br><br>
+
+ <div id="map_content"> 
+<h3>Major Earthquakes Within 24 Hrs</h3>
 
 <!-- Content begin -->
   <svg id="map" data-no-turbolink></svg>
@@ -10,11 +14,13 @@
   <script src="http://d3js.org/d3.geo.projection.v0.min.js"></script>
   <script src="http://d3js.org/topojson.v0.min.js"></script>
   <!-- Dependencies end-->
-  
+
+
   <% content_for :scripts do :javascript%>
-  <script type="text/javascript" data-no-turbolink>
-  var width = 960,
+<script type="text/javascript" data-no-turbolink>
+    var width = 960,
     height = width / 2;
+
 
 var opacity = d3.scale.linear()
     .domain([0, 24*3600*1000])
@@ -129,8 +135,8 @@ d3.json('http://www.corsproxy.com/earthquake.usgs.gov/earthquakes/feed/geojson/2
   }, 1000);
 
 });
-
   </script>
   <%end%>
+</div>
 
 

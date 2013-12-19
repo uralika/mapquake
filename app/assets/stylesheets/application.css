@@ -18,6 +18,53 @@ body {
   font: 10px sans-serif;
 }
 
+h3 {
+  text-align: center;
+}
+
+#button {
+   border-top: 1px solid #0e0f0f;
+   background: #ffffff;
+   background: -webkit-gradient(linear, left top, left bottom, from(#fffaff), to(#ffffff));
+   background: -webkit-linear-gradient(top, #fffaff, #ffffff);
+   background: -moz-linear-gradient(top, #fffaff, #ffffff);
+   background: -ms-linear-gradient(top, #fffaff, #ffffff);
+   background: -o-linear-gradient(top, #fffaff, #ffffff);
+   padding: 4.5px 9px;
+   -webkit-border-radius: 0px;
+   -moz-border-radius: 0px;
+   border-radius: 0px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: #141214;
+   font-size: 12px;
+   font-family: Helvetica, Arial, Sans-Serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+#button:hover {
+   border-top-color: #000000;
+   background: #000000;
+   color: #ffffff;
+   }
+#button:active {
+   border-top-color: #1b435e;
+   background: #1b435e;
+   }
+
+
+#map_content {
+  width: 965px;
+  margin: 0 auto;
+}
+
+.container {
+  width: 480px;
+  margin: 0 auto;
+}
+
 .water {
   fill: #a4bac7;
 }

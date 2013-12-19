@@ -1,7 +1,7 @@
-MeAlert:<br><br>
+
 
 <% @alerts.each do |alert| %>
-
+<div class = "container">
 <tr>
 	<td><b><u><%= alert.name %></u></b>:</td>
 
@@ -11,7 +11,7 @@ MeAlert:<br><br>
 
 	<td><%= alert.zip %></td>&nbsp;
 
-	<td><%= link_to "X", alert, method: :delete %></td><br><br>
+	<td><%= link_to "X", alert, {method: :delete, :style=>'border: 1px solid black', :id => 'button'} %></td><br><br>
 </tr>
 <tr>
 	<td>
@@ -32,4 +32,5 @@ MeAlert:<br><br>
 </tr>
 <% end %>
 <br><br>
-<%= link_to 'New Alert', new_alert_path %>
+<%= link_to 'New Alert', new_alert_path, {:style=>'border: 1px solid black', :id => 'button'} %>
+</div>

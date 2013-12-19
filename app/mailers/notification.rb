@@ -5,7 +5,7 @@ class Notification < ActionMailer::Base
 
   def new_account(user)
   	mail(:to => user.email,
-  		 :subject => "The new account #{user.username} is active.")
+  		 :subject => "#{user.username}, your Mapquake account is now active!")
   end
 
   def daily_quakes(user)

@@ -39,7 +39,7 @@
   <% if current_user %>
   <div class="login">
     <h1 class="logged"><%= current_user[:username] %></h1>
-    <%= button_to "Log out", "/users/new", method: :delete, id: 'logoutbutton' %>
+    <%= button_to "Log out", "/users/new", method: :delete, id: 'button' %>
   </div>
   <% else %>
   <div class="container">
